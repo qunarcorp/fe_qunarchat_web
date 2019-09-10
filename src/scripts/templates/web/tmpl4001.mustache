@@ -1,0 +1,37 @@
+<div class="faq_talk_content">
+{{#datas.data}}
+
+	{{^isMore}}	
+		{{#isMe}}
+			<div class="item">
+		{{/isMe}}
+
+		{{^isMe}}
+			{{#isOneRow}}
+				<div class="item" data-actionType="{{actionType}}" data-url="{{url}}" data-settlementOrderId="{{properties.settlementOrderId}}" data-productTypeId="{{properties.productTypeId}}">
+			{{/isOneRow}}
+
+			{{^isOneRow}}
+				<div class="item bd_line" data-actionType="{{actionType}}" data-url="{{url}}" data-settlementOrderId="{{properties.settlementOrderId}}" data-productTypeId="{{properties.productTypeId}}">
+			{{/isOneRow}}
+		{{/isMe}}
+		   <div class="date_box">
+		      <span class="type">{{properties.productTypeName}}</span>
+		      <span class="date">{{properties.settlementDateInterval}}</span>
+		   </div>
+		   <div class="state_box" >
+		      <span class="price">¥{{properties.money}}</span>
+		      <span class="state">{{properties.settlementStatusName}}</span>
+		   </div>
+		</div>
+	{{/isMore}}
+
+	{{#isMore}}
+	<div class="item">
+	   <div class="view_more js-more" data-problemId="{{properties.problemId}}" data-qunarUserName="{{properties.qunarUserName}}">
+	   		<a href="javascript:void(0);" >{{text}}</a>
+	   </div>
+	</div>
+	{{/isMore}}
+{{/datas.data}}
+</div>

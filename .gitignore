@@ -1,0 +1,47 @@
+# qzz/fekit/grunt
+/ver/
+/dev/
+/prd/
+/refs/
+/web/
+/node_modules/
+
+# kdiff3 ignore
+*.orig
+
+# maven ignore
+target/
+
+.ykit_cache/
+.vscode/
+
+# eclipse ignore
+.settings/
+.project
+.classpath
+.ykit_cache/
+
+# idea ignore
+.idea/
+*.ipr
+*.iml
+*.iws
+
+# temp ignore
+*.log
+*.cache
+*.diff
+*.patch
+*.tmp
+
+# system ignore
+.DS_Store
+Thumbs.db
+
+# package ignore (optional)
+# *.jar
+# *.war
+# *.zip
+# *.tar
+# *.tar.gz
+darlyn.md

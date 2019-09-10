@@ -1,0 +1,12 @@
+<div class="talk_ddr clr robot-question">
+    {{#message}}
+    <div class="msg_sys">
+        {{#hints}}
+        <a href="javascript:;" class="robot-question js-needStaffService {{event.type}}"
+            data-msg="{{event.msgText}}"
+            data-type="{{event.type}}"
+            data-url="{{event.url}}">{{text}}</a>
+        {{/hints}}
+    </div>
+    {{/message}}
+</div>

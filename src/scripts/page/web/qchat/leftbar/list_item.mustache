@@ -1,0 +1,16 @@
+{{#list}}
+<li id="{{contactId}}" data-webname="{{contact}}" data-shop="0" data-host="{{host}}" class="qchat-item {{#isNote}}note-msg{{/isNote}} {{#isActive}}active{{/isActive}}" href="javascript:;">
+    <div class="item-img" style="background-image: url(/assets/web/luotuo.png)">
+        <span class="item-unread hide">10{{unread}}</span>
+    </div>
+    <div class="item-detail">
+        <p class="item-na" data-name="{{contactId}}">
+        	<span class="webname">{{contact}}</span>
+        	<span class="item-date"></span>
+        </p>
+        <p class="item-pr">            
+            <span class="item-msg"></span>
+        </p>
+    </div>
+</li>
+{{/list}}

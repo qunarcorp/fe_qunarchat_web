@@ -1,0 +1,32 @@
+{{^sender}}
+<li class="msg">
+    {{#isSysMsg}}
+        <div class="msg-sys">
+            <p>{{message}}</p>
+        </div>
+    {{/isSysMsg}}
+    {{^isSysMsg}}
+    <span class="u-pic" style="background: url('{{imageUrl}}') #D8D8D8  no-repeat center center; -webkit-background-size: .5rem .5rem; background-size: .5rem .5rem;"></span>
+    <div class="txt-name">{{webYourName}}</div>
+    <div class="txt">
+        <p></p>
+    </div>
+    {{/isSysMsg}}
+</li>
+{{/sender}}
+{{#sender}}
+<li class="msg msg-u">
+    <span class="u-pic1" style="background: url(/assets/png/defaultAvatar.png) #D8D8D8 no-repeat center center; -webkit-background-size: .5rem .5rem; background-size: .5rem .5rem;"></span>
+    <div class="txt-name-right">{{webMyName}}</div>
+    {{^imgMessage}}
+        <div class="txt-right">
+            <p></p>
+        </div>
+    {{/imgMessage}}
+    {{#imgMessage}}
+        <div class="txt-img">
+            <p></p>
+        </div>
+    {{/imgMessage}}
+</li>
+{{/sender}}

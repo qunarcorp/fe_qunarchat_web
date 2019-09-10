@@ -1,0 +1,91 @@
+<div id="js-dialog-mask" style="display:none">
+    <div id="js-dialog-content">
+    {{!自定义内容}}
+    </div>
+</div>
+<div id="container" class="main lb_open">
+    <div class="main">
+        <div class="header">
+            {{! 在css文件中修改.logo的background的url }}
+            <span><em id="chatTitle">在线客服</em></span></div>
+        <div id="leftbar" class="left_sidebar">
+            <ul class="qchat-list"></ul>
+            <div class="switcher">
+                <i class="toggle_icon open hide">&nbsp;〉</i>
+                <i class="toggle_icon close" style="left:-8px">〈 &nbsp;</i>
+            </div>
+            <span class="unread_num hide"></span>
+        </div>
+        <div id="chatwindow" class="chat_window">
+            <div class="remind">
+                <div class="text"><i style="background: url(/assets/web/icobg4.png) no-repeat -129px 0"></i><span id="status">连接中</span>,<span id="supplierName"></span><span id="chatName"></span> 为您服务</div>
+            </div>
+            <div class="dialog">
+                <div class="scrollbar">
+                    <div class="viewport">
+                        <div class="prompt clr" id="more_div">
+                            <img id="loading"  src="../../../assets/web/loading1.gif">
+                            <a id="more_msg">查看更多消息</a>
+                        </div>
+                        <div class="overview"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="entry">
+                <div class="writing">
+                    <div class="toggle-smiley"></div>
+                    <div class="tools">
+                        <div class="face biaoqing" id="smiley" style="background-image: url(/assets/web/biaoqing1.png)"></div>
+                        <div class="face zhendong" id="shake" style="background-image: url(/assets/web/zhendong2.png)"></div>
+                        <div class="face tupian" style="background-image: url(/assets/web/tupian3.png)">
+                            <input id="imageupload" class="file" type="file" name="file" accept="image/gif, image/jpeg,image/x-png" multiple>
+                        </div>
+                        <div class="face tfile" style="background-image: url(/assets/web/tfile4.png)">
+                            <input id="fileupload" class="file" type="file" name="file" multiple>
+                        </div>
+                    </div>
+                    <div class="intxt">
+                        <div class="inputdiv" id="text" contenteditable="true"></div>
+                    </div>
+                </div>
+                <div class="send clr">
+                    <em>按Enter发送消息</em>
+                    <p>
+                        <a id="close" type="button" class="btn_close">关 闭</a>
+                        <a id="submit" type="button" class="btn_enter">发 送</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="right_sidebar" id="right_sidebar">
+            <div class="slider_tab" id="slider_tab">
+                <div class="slider_tab_icon choose-icon" data-tab="info">当前咨询</div>
+                <div class="slider_tab_icon" data-tab="history">咨询历史</div>
+        </div>
+        <div class="right_sidebar_container">
+                <div class="qt-product-message pt-info"></div>
+                <div class="qt-product-history pt-history" style="display: none;"></div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="global-mask" class="global-mask hide"></div>
+<div class="captcha-box hide" id="captcha-box">
+    <div id="captcha" class="captcha-inner">
+        <p class="tit">您发送消息的频率过快，请输入下面的验证码</p>
+        <p class="tit">证明您不是机器人</p>
+        <div class="code-box">
+            <input type="input" class="captcha-code">
+            {{! 需使用者提供,验证码图片地址 }}
+            <img class="code-img" src="">
+            <div class="captcha-error hide" id="errmsg">
+                <i class="btn-red"></i>
+                <span>图形验证码错误</span>
+            </div>
+        </div>
+
+        <div class="captcha-submit">
+            <a class="sub-btn">提交</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,38 @@
+{{#data}}
+<div class="qt-order-detail">
+    <div class="qt-item-group">
+        <div class="qt-txt-light">商品：</div>
+        <div class="qt-label-content">
+            <ul class="qt-order-pics">
+                <li class="qt-item">
+                    <a target="_blank" href="{{detailUrl}}"><img src="{{pic}}" title="{{title}}" height="118" width="176"></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="qt-item-group">
+        <div class="qt-txt-light">产品名称：</div>
+        <div class="qt-label-content" title="{{title}}">{{title}}</div>
+    </div>
+    <div class="qt-item-group">
+        <div class="qt-txt-light">订单编号：</div>
+        <div class="qt-label-content">{{displayId}}</div>
+    </div>
+    <div class="qt-item-group">
+        <div class="qt-txt-light">下单时间：</div>
+        <div class="qt-label-content">{{date}}</div>
+    </div>
+    <div class="qt-item-group">
+        <div class="qt-txt-light">订单金额：</div>
+        <div class="qt-label-content">&yen;{{price}}</div>
+    </div>
+    <div class="qt-item-group">
+        <div class="qt-txt-light">订单状态：</div>
+        <div class="qt-label-content">{{status}}</div>
+    </div>
+    <div class="qt-item-group">
+        <div class="qt-txt-light">支付方式：</div>
+        <div class="qt-label-content">{{payWay}}</div>
+    </div>
+</div>
+{{/data}}

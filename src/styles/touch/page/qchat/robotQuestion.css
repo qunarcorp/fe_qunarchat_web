@@ -1,0 +1,103 @@
+.robot-question {
+    position: relative;
+}
+.robot-question .list-tips {
+    margin-top: 20px;
+}
+.robot-question .ddr_time {
+    margin-left: .65rem;
+    font-size: .13rem;
+    line-height: .18rem;
+    min-height: .18rem;
+    color: #999999;
+}
+.robot-question .answer-sub {
+    position: absolute;
+    top: 0;
+    width: .5rem;
+    height: .5rem;
+    display: block;
+    border-radius: .25rem;
+    background-color: #D8D8D8;
+}
+.robot-question .answer_talk {
+    margin: 0rem 0 0.2rem 0.62rem;
+    padding: .06rem .15rem .05rem .12rem;
+    border: 1px solid #DDDDDD;
+    border-radius: 0.2rem;
+    background-color: #fff;
+    z-index: 3;
+}
+.robot-question .answer_talk::before {
+    content: "";
+    display: block;
+    width: 0;
+    position: absolute;
+    top: .38rem;
+    left: .5rem;
+    border-style: solid;
+    border-width: 0 .14rem .15rem .12rem;
+    border-color: transparent transparent #dddddd transparent;
+    z-index: -1;
+}
+.robot-question .answer_talk::after {
+     content: "";
+     display: block;
+     width: 0;
+     position: absolute;
+     top: .38rem;
+     left: .51rem;
+     border-style: solid;
+     border-width: 0 .14rem .14rem .12rem;
+     border-color: transparent transparent #fff transparent;
+     z-index: 3;
+ }
+.robot-question .question-list {
+    overflow: hidden;
+}
+.robot-question .list-tips,
+.robot-question .item {
+    line-height: 29px;
+    border-bottom: 1px solid #ddd;
+}
+.robot-question .item:last-of-type {
+    border-bottom: 0;
+}
+.robot-question .interface {
+    color: #01bcd4;
+}
+.robot-question .cont {
+    white-space: pre-line;
+}
+.robot-question .text {
+    cursor: default;
+}
+.robot-question .more-btn {
+    border-top: 1px solid #ddd;
+}
+.robot-question .msg_sys {
+    padding-bottom: 20px;
+    text-align: center;
+}
+.height-auto {
+    height: auto !important;
+}
+
+.robot-suggest-list {
+    position: fixed;
+    width: 100%;
+    height: 150px;
+    left: 0;
+    bottom: .46rem;
+    padding: 10px;
+    border: 1px solid #ddd;
+    z-index: 10;
+    background-color: #eee;
+    overflow: auto;
+}
+.robot-suggest-list .item {
+    line-height: 29px;
+}
+.robot-suggest-list .robot-question{
+    color: #01bcd4;
+}

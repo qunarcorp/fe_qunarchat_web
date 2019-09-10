@@ -1,0 +1,30 @@
+{{#data}}
+	<div class="qt-product-pic">
+		<a href="{{url}}" target="_blank">
+			<img class="qt-image" src="{{img}}" alt="{{fullName}}" width="176" height="100">
+		</a>
+	</div>
+	<div class="qt-product-id" title="{{enId}}"><span class="title">产品编号 : </span><span class="content">{{enId}}</span></div>
+	<div class="qt-product">
+		<div class="qt-product-title">
+			<span class="content">
+				<a href="{{url}}" target="_blank" title="{{fullName}}">{{shortName}}</a>
+			</span>
+		</div>
+
+		{{^isDep}}
+		<div class="qt-product-price"><span class="content qt-txt-rmb qunar">&yen;{{qPrice}}</span>起/人</div>
+		{{/isDep}}
+
+		<!-- 是联运产品 -->
+		{{#isDep}}
+		<div class="qt-product-price">【联运】价格：<span class="content qt-txt-rmb qunar">&yen;{{qPrice}}</span>起/人</div>
+		<div class="qt-product-dep"><span class="content">【联运】客人出发地：</span>{{dep}}</div>
+		{{/isDep}}
+
+		<div class="qt-product-supplier"><span class="content qt-txt-rmb qunar">供应商：</span>{{supplierName}}</div>
+		<!-- <div class="qt-btn-area">
+			 <a href="" target="_blank" class="" title="立即购买">立即购买<b></b></a>
+		</div> -->
+	</div>
+{{/data}}

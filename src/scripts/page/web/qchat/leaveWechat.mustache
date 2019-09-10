@@ -1,0 +1,33 @@
+<div class="detail-mask" id="js_wechat_message_mask">
+    <!--内容-->
+    <div class="message-layer" id="js_wechat_msg_content">
+        <div class="mes-box">
+            <div class="mes-title">
+               留下微信号，接收商家回复
+                <a href="javascript:void(0)" class="clz js_close_wechat_message"></a>
+            </div>    
+            <div class="mes-cont">
+                <div class="contacts mes-code" id="js_wechat_info">
+                    <img src="{{data.imgUrl}}" alt="">
+                    <ul>
+                        <li class="m10 clrfix minheight35">
+                            <label>联系人</label>
+                            <span>{{data.name}}</span>
+                        </li>    
+                        <li class="clrfix minheight35">
+                            <label> <em class="red">*</em>微信号</label>
+                            <input type="text" id="weixin" class="textbox" data-info="微信号" value="" placeholder="请输入微信号" />
+                            <span id="weixin_error_message" class="red error_tip"></span>                                                       
+                        </li>
+                        <li class="clrfix minheight35">
+                            <span class="msg-warning">我们将于24小时内添加您的微信号，请注意通过</span>
+                        </li>
+                    </ul>
+                    <div class="mbtn mbtn">
+                        <a href="javascript:void(0)" class="cancel js_submit_wechat_info">确认发送</a>                           
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

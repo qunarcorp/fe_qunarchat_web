@@ -1,0 +1,118 @@
+<div class="detail-mask" id="js_message_mask">
+    <!--内容-->
+    <div class="message-layer {{#data.mobile}}message-layer02{{/data.mobile}}" id="js_msg_content">
+        <div class="mes-box">
+            <div class="mes-title">
+                留下联系方式，等待商家回电
+                <a href="javascript:void(0)" class="clz js_close_message"></a>
+            </div>
+
+            <div class="mes-cont {{#data.mobile}}msg-hide{{/data.mobile}}" id="js_message_edit">
+                <div class="contacts">
+                    <ul>
+                        <li class="clrfix">
+                            <label>联系人</label>
+                            <input type="text" id="user" class="textbox" placeholder="请输入联系人姓名" value="{{data.name}}">
+                            <span></span>
+                        </li>
+                        <li class="clrfix">
+                            <label> <em class="red">*</em>
+                                手机号
+                            </label>
+                            <input type="text" id="telephone" class="textbox" data-info="手机号" value="{{data.mobile}}"
+                                   placeholder="请输入手机号">
+                            <span id="tel_error_message" class="red error_tip"></span>
+                        </li>
+                        <li class="clrf" id="code" style="display:none">
+                            <label> <em class="red">*</em>
+                                短信验证码
+                            </label>
+                            <div class="clrf">
+                                <input id="shortMessage" type="text" maxlength="6" class="textbox" data-info="验证码"/>
+                                <a href="javascript:void(0)" class="js_getCode yzm">获取验证码</a> <i
+                                    class="yzmed js_hasCode" style="display:none;"><span class="js_second">60</span>
+                                秒后重发</i>
+                            </div>
+                            <div class="error">
+                                <em id="short_error_message" class="red error_tip" style="line-height:14px"></em>
+                            </div>
+                        </li>
+                    </ul>
+                    <div class="common-btn">
+                        <a href="javascript:void(0)" class="refer js_submit_message">保存</a>
+                        <a href="javascript:void(0)" class="cancel js_close_message">取消</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mes-cont {{^data.mobile}}msg-hide{{/data.mobile}}">
+                <div class="contacts mes-code" id="js_info">
+                    <img src="{{data.imgUrl}}" alt="">
+                    <ul>
+                        <li class="clrfix">
+                            <label>联系人</label>
+                            <span>{{data.name}}</span>
+                        </li>
+                        <li class="clrfix">
+                            <label>手机号</label>
+                            <span>{{data.mobile}}</span>
+                        </li>
+                        <li class="clrfix">
+                            <span class="msg-warning">（此号会以加密方式发送给商家，请放心发送）</span>
+                        </li>
+                        <li class="clrfix">
+                            <label>留言</label>
+                            <span><textarea placeholder="简单描述您的问题，便于商家更好地回复您哦" class="js-leaveword txt"
+                                            id="leave_message"></textarea></span>
+                        </li>
+                    </ul>
+                    <div class="common-btn">
+                        <a href="javascript:void(0)" class="refer js_submit_Info">确认发送</a>
+                        <a href="javascript:void(0)" class="cancel js_edit_message">修改名片</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--内容-->
+    <!--内容-->
+    <div class="message-layer message-layer02" id="js_message_success" style="display: none">
+        <div class="mes-box">
+            <div class="mes-title">
+                提示
+                <a href="javascript:void(0)" class="clz js_close_message"></a>
+            </div>
+            <div class="mes-cont">
+                <div class="contacts-success">
+                    <div class="notice"><strong><i class="success-ico"></i>
+                        联系方式发送成功，请保持手机畅通</strong>
+                        <em>商家会在24小时内通过400电话与您联系，接听免费</em>
+                    </div>
+                    <div class="common-btn">
+                        <a href="javascript:void(0)" class="refer js_close_message">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--内容-->
+    <!--内容-->
+    <div class="message-layer message-layer02" id="js_message_fail" style="display: none">
+        <div class="mes-box">
+            <div class="mes-title">
+                提示
+                <a href="javascript(0)" class="clz js_close_message"></a>
+            </div>
+            <div class="mes-cont">
+                <div class="contacts-success">
+                    <div class="notice"><strong><i class="fail-ico"></i>
+                        <span id="js_errorMessage">发送失败，请重新提交联系方式</span></strong>
+                    </div>
+                    <div class="common-btn">
+                        <a href="javascript:void(0)" class="refer js_close_message">确定</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--内容--> </div>

@@ -1,0 +1,21 @@
+<div class="history-date"><span class="line-title">{{date}}</span><hr class="line-tag" /></div>
+<ul class="product-list">
+    {{#data}}
+        <li class="msg msg-u" data-id="{{id}}">
+            <div class="product-container">
+                <div class="img_box">
+                    <img src="{{img}}">
+                    <span class="img-box-tag">{{type}}</span>
+                </div>
+                <div class="product-title">
+                    <h3 class="h3">{{title}}</h3>
+                    <div class="product-tag">{{tag}}</div>
+                    <div class="product-price">
+                        <span class="price"><b>¥</b>{{price}}</span>元
+                    </div>
+                    <div class="product-button" data-url="{{url}}">发送链接</div>
+                </div>
+            </div>
+        </li>
+    {{/data}}
+</ul>

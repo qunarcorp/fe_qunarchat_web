@@ -1,0 +1,37 @@
+{{#data}}
+    <div class="qt-product-info">
+        <div class="qt-product-date">{{showTime}}</div>
+        {{#list}}
+        <div>
+            <div class="qt-product-pic">
+                <a href="{{url}}" target="_blank">
+                    <img class="qt-image" src="{{img}}" alt="{{title}}" width="176" height="100">
+                </a>
+            </div>
+            <div class="qt-product-id" title="{{id}}"><span class="title">产品编号 : </span><span class="content">{{id}}</span></div>
+            <div class="qt-product">
+                <div class="qt-product-title">
+    		    	<span class="content">
+    			    	<a href="{{url}}" target="_blank" >{{shotTitle}}</a>
+    				</span>
+                    {{^other}}
+                    <span class="tag">本店</span>
+                    {{/other}}
+                </div>
+                <div class="qt-product-price"><span class="content qt-txt-rmb qunar">&yen;{{price}}</span>起/人</div>
+            </div>
+            {{^other}}
+            <div class="qt-product-url" data-url="{{url}}">
+                <span>发送链接给商家</span>
+            </div>
+            {{/other}}
+
+            {{#other}}
+            <div class="qt-product-consult" data-strid="{{kefu}}">
+                <span>咨询客服</span>
+            </div>
+            {{/other}}
+        </div>
+        {{/list}}
+    </div>
+{{/data}}

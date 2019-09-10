@@ -1,0 +1,27 @@
+<div class="talk_ddr clr robot-question">
+    <img class="answer-sub" src="{{imageUrl}}" />
+    <span class="ddr_time">{{username}} {{time}}</span>
+    <div class="answer_talk"><i></i>
+    {{#message}}
+        <div class="cont">{{{content}}}</div>
+        {{#hasQuestionList}}
+        <div class="list-tips">{{listTips}}</div>
+        <ul class="question-list" style="height: {{listMaxHeight}}">
+            {{#listArea.items}}
+            <li class="item">
+                <a href="javascript:;" class="robot-question js-sendRobotQuestion {{event.type}}"
+                    data-msg="{{event.msgText}}"
+                    data-type="{{event.type}}"
+                    data-url="{{event.url}}">{{text}}</a>
+            </li>
+            {{/listArea.items}}
+        </ul>
+        {{#hasMoreBtn}}
+        <div class="item more-btn" id="js-moreRobotQuestion">
+            <a href="javascript:;" class="robot-question more-question">查看更多<i class="arrow-down"></i><i class="arrow-down"></i></a>
+        </div>
+        {{/hasMoreBtn}}
+        {{/hasQuestionList}}
+    {{/message}}
+    </div>
+</div>

@@ -1,0 +1,33 @@
+<section id="{{id}}">
+    <section class="v_mask"></section>
+    <section class="v_pop fh_flex">
+        <section class="b_fh_wrap">
+            <section class="b_fh_pop {{clazz}}">
+                {{#close}}<div class="title">{{header}}<span class="close">×</span></div>{{/close}}
+                <div class="cont">
+                    {{^multi}}
+                        <h4 class="status">{{{data.title}}}</h4>
+                        <p>{{{ data.text }}}</p>
+                    {{/multi}}
+                    {{#multi}}
+                        {{#data }}
+                        {{#onerow}}
+                        <h5 class="cont_hd">{{{onerow}}}</h5>
+                        {{/onerow}}
+                        {{^onerow}}
+                        <dl class="{{dlClz}}">
+                            <dt class="{{dtClz}}">{{ title }}</dt>
+                            <dd class="{{ddClz}}">{{{ text }}}</dd>
+                        </dl>
+                        {{/onerow}}
+                        {{/data}}
+                    {{/multi}}
+                    <p class="btn">
+                            {{#ok}}<a href="javascript:;" class="buy {{btn_class}}">{{ ok_text }}</a>{{/ok}}
+                            {{#cancel}}<a href="javascript:;" class="nobuy {{btn_class}}">{{cancel_text}}</a>{{/cancel}}
+                    </p>
+                </div>
+            </section>
+        </section>
+    </section>
+</section>

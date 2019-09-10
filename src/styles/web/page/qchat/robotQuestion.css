@@ -1,0 +1,48 @@
+.robot-question .list-tips {
+    margin-top: 20px;
+}
+.robot-question .question-list {
+    overflow: hidden;
+}
+.robot-question .list-tips,
+.robot-question .item {
+    line-height: 29px;
+    border-bottom: 1px solid #ddd;
+}
+.robot-question .item:last-of-type {
+    border-bottom: 0;
+}
+.robot-question .interface {
+    color: #01bcd4;
+}
+.robot-question .cont {
+    white-space: pre-line;
+}
+.robot-question .text {
+    cursor: default;
+}
+.robot-question .more-btn {
+    border-top: 1px solid #ddd;
+}
+.height-auto {
+    height: auto !important;
+}
+
+.robot-suggest-list {
+    position: fixed;
+    width: 350px;
+    height: 150px;
+    left: 305px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    bottom: 175px;
+    z-index: 10;
+    background-color: #eee;
+    overflow: auto;
+}
+.robot-suggest-list .item {
+    line-height: 29px;
+}
+.robot-suggest-list .robot-question{
+    color: #01bcd4;
+}

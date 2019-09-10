@@ -1,0 +1,10 @@
+<ul class="robot-suggest-list">
+    {{#data}}
+    <li class="item">
+        <a href="javascript:;" class="robot-question js-sendRobotQuestion {{clickType}}"
+            data-msg="{{itemText}}"
+            data-type="{{clickType}}"
+            data-url="{{url}}">{{itemText}}</a>
+    </li>
+    {{/data}}
+</ul>

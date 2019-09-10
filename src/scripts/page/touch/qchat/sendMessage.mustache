@@ -1,0 +1,31 @@
+{{#data}}
+<div class="m-contact">
+	<div class="m-contact-title m-contact-content">
+		<div class="m-contact-name">联系方式</div>
+		<div class="m-contact-close"></div>
+	</div>
+	<div class="m-contact-content">
+		<div class="m-contact-img">
+			<img src="{{imgUrl}}" alt="" />
+		</div>
+		<div class="m-contact-info">
+			<p>{{name}}</p>
+			{{#mobile}}
+			<p>{{mobile}}<span class="short-info">(此号会以加密方式发给商家)</span></p>
+			{{/mobile}}
+		</div>
+	</div>
+	{{#mobile}}
+	<div class="m-contact-bottom">
+		<div class="m-contact-operate js_writeInfo">修改信息</div>
+		<div class="m-contact-operate js_sendMessage">确认发送</div>
+	</div>
+	{{/mobile}}
+	{{^mobile}}
+	<div class="m-contact-bottom">
+		<a href="javascript:void(0)" class="js_writeInfo">完善信息</a>
+	</div>
+	{{/mobile}}
+</div>
+<div class="m-bottom"></div>
+{{/data}}

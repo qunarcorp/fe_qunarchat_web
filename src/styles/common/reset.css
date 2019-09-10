@@ -1,0 +1,18 @@
+html,body{margin:0;height:100%}
+body { margin:0; padding:0; font:normal 12px/1.231 Arial; color:#555; -webkit-font-smoothing:antialiased;-webkit-text-size-adjust:100%}
+div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, button, p, th, td { margin:0; padding:0; }
+fieldset, img { border:0; vertical-align:bottom;}
+table { border-collapse:collapse; border-spacing:0; font-size:12px}
+ol, ul { list-style:none; }
+address, caption, cite, code, dfn, em, th, var { font-style:normal; font-weight:400; }
+strong { font-style:normal; font-weight:700; }
+caption, th { text-align:left; }
+h1, h2, h3, h4, h5, h6 { font-size:100%; font-weight:400; }
+q:before, q:after { content:""; }
+abbr, acronym { border:0; }
+a{ color:#0069ca; text-decoration:none;outline:none }
+a:hover{ color:#f60;}
+b,strong{ font-weight:normal;}
+th,td{text-align: center;}
+input, textarea{outline:none}
+textarea {resize: none;}

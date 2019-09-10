@@ -1,0 +1,141 @@
+<div class="wrap">
+    {{^ifApp}}
+    <header class="header">
+        <div class="goback"></div>
+        <div class="title"><span id="chatName">客服</span>-<span id="status">连接中</span></div>
+        {{#supportZuji}}
+            <div class="history ops" id="history-page">足迹</div>
+        {{/supportZuji}}
+    </header>
+    <section class="m-chat wrapperApp" id="wrapper">
+        <div class="chat-list">
+            <div id="more_p" class="chat-list-more">
+                <div id="loading" class="loadtip">
+                    <i class="yo-ico yo-ico-loading"></i>
+                    <div class="text">加载中...</div>
+                </div>
+                <div id="more_msg" style="display: none;" class="loadtip">
+                    <i class="yo-ico"></i>
+                    <div class="text">下拉查看更多信息</div>
+                </div>
+            </div>
+            <ul class="msg-list" id="msg_list">
+            </ul>
+        </div>
+    </section>
+    {{/ifApp}}
+    {{#ifApp}}
+    <section class="m-chat wrapperApp m-chat-app" id="wrapper">
+        <div class="chat-list">
+            <div id="more_p" class="chat-list-more">
+                <div id="loading" class="loadtip">
+                    <i class="yo-ico yo-ico-loading"></i>
+                    <div class="text">加载中...</div>
+                </div>
+                <div id="more_msg" style="display: none;" class="loadtip">
+                    <i class="yo-ico"></i>
+                    <div class="text">下拉查看更多信息</div>
+                </div>
+            </div>
+            <ul class="msg-list" id="msg_list">
+            </ul>
+        </div>
+    </section>
+    {{/ifApp}}
+    <section class="m-chatops" id="footer">
+        <ul class="input">
+            <li class="ipt-face"><a href="#" class="face" style="background-image: url(/assets/touch/emotion.png)"></a></li>
+            <li class="ipt-ing">
+                <!--<textarea type="text"  class="resizable" id="text" maxlength="200"></textarea>-->
+                <input class="resizable" id="text" placeholder="点击换行发送消息" />
+            </li>
+            <!--<li class="ipt-btn">
+                <a href="#" class="btn-gray" id="submit">发 送</a>
+            </li>-->
+            {{^ifAdaptation}}
+                <li class="ipt-resource" id="resource">
+                    <a href="#" class="resource" style="background-image: url(/assets/touch/sendImg.png)">
+                        {{^ifApp}}
+                        <input type="file" name="file" class="upload-image" id="uploadImg" autocomplete="off" accept="image/*">
+                        {{/ifApp}}
+                    </a>
+                </li>
+            {{/ifAdaptation}}
+            <li class="ipt-send" style="display: none;" id="send-message">
+                <span class="send-message">发送</span>
+            </li>
+        </ul>
+        <div class="ops-display">
+            <div class="toggle-smiley"></div>
+            <div class="toggle-resource">
+                <ul>
+                    {{^ifApp}}
+                        <li class="res-image upload-image">
+                            <div class="bg">
+                                <input type="file" name="file" class="upload-image" id="uploadImg" autocomplete="off" accept="image/*">
+                            </div>
+                            <div class="txt">图片</div>
+                        </li>
+                    {{/ifApp}}
+                    {{#ifApp}}
+                        <li class="res-image upload-image" id="uploadImg">
+                            <div class="bg">
+                            </div>
+                            <div class="txt">图片</div>
+                        </li>
+                    {{/ifApp}}
+                </ul>
+            </div>
+        </div>
+    </section>
+
+</div>
+
+<div class="swiper-container swiper-container-horizontal" id="js_img_detail" style="visibility: hidden;">
+    <div class="swiper-wrapper">
+        <!--<div class="swiper-slide">Slide 1</div>
+        <div class="swiper-slide">Slide 9</div>
+        <div class="swiper-slide">Slide 10</div>-->
+    </div>
+    <!-- Add Pagination -->
+    <div class="swiper-pagination"></div>
+</div>
+
+<div class="browser-history" id="browser-history" style="visibility: hidden;">
+    <div class="history-left" id="history-left"></div>
+    <div class="history-right">
+        <div class="history-head"><span class="header-title">最近浏览足迹</span></div>
+        <div class="history-wrapper">
+            <div class="history-container" id="history-container">
+                <div id="history-loading-tip" class="yo-loadtip" style="display: none;">
+                    <i class="yo-ico yo-ico-loading history-load-tip" id="load-tip-message"></i>
+                </div>
+            </div>
+        </div>
+        <div class="history-no-result" id="history-no-result" style="display: none;">
+            <span>您还没有浏览记录</span>
+        </div>
+    </div>
+</div>
+
+<div class="m_mask" id="filter-mask" style="display: none;"></div>
+{{!全局mask}}
+<div id="global-mask" class="global-mask hide"></div>
+{{!验证码模块}}
+<div class="captcha-box hide" id="captcha-box">
+    <div id="captcha" class="captcha-inner">
+        <p class="tit">您发送消息的频率过快，请输入下面的验证码，证明您不是机器人</p>
+        <div class="code-box">
+            <input type="input" class="captcha-code">
+            {{! 需使用者提供,验证码图片地址 }}
+            <img class="code-img" src="">
+            <div class="captcha-error hide" id="errmsg">
+                <i class="btn-red"></i>
+                <span>图形验证码错误</span>
+            </div>
+        </div>
+        <div class="captcha-submit">
+            <a class="sub-btn">提交</a>
+        </div>
+    </div>
+</div>

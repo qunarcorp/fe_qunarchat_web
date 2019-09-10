@@ -1,0 +1,108 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "node": true
+  },
+  "plugins": [
+    "react"
+  ],
+  "parser": "babel-eslint",
+  "rules": {
+    "no-cond-assign": 0,
+    "no-console": 2, // 禁用 console
+    "no-alert": 2, // 禁用 alert
+    "no-irregular-whitespace": 2,
+    "no-unexpected-multiline": 2,
+    // "valid-jsdoc": [2, { // JS 注释相关，暂时注释
+    //   "requireParamDescription": false,
+    //   "requireReturnDescription": false,
+    //   "requireReturn": false,
+    //   "prefer": {"returns": "return"}
+    // }],
+    "guard-for-in": 2, // for in 循环必须限制 hasOwnPropities
+    "no-caller": 2,
+    "no-extend-native": 2,
+    "no-extra-bind": 2,
+    "no-invalid-this": 1, // 控制this的使用
+    "no-multi-spaces": 2, // 不能使用多个空行
+    "no-multi-str": 2,
+    "no-new-wrappers": 2,
+    "no-throw-literal": 2,
+    "no-with": 2, // 禁用this关键字
+    "no-unused-vars": [2, {"args": "none"}], // 未使用的变量定义
+    "array-bracket-spacing": [2, "never"],
+    "brace-style": 2,
+    "camelcase": [1, {"properties": "never"}], // 驼峰变量命名
+    "comma-dangle": [2],
+    "comma-spacing": 2, // 逗号后非行尾需要加空格
+    "comma-style": 2,
+    "computed-property-spacing": 2,
+    "eol-last": 2,
+    "func-call-spacing": 2,
+    "jsx-quotes": 2,
+    "key-spacing": 2, // 对象key之后，冒号前不允许有空格; value前需要有空格
+    "keyword-spacing": 0,
+    "linebreak-style": 2,
+    "new-cap": 2,
+    "newline-after-var": 1, // 变量定义后增加空行
+    "no-array-constructor": 2, // new Array X
+    "no-mixed-spaces-and-tabs": 2, // 禁止混用tab与空格
+    "no-multiple-empty-lines": [2, {"max": 2}], // 不能有多个空行,最多两行
+    "no-new-object": 2,
+    // "no-tabs": 0, // 不使用tab
+    "no-trailing-spaces": 2, // 行尾不留空格
+    "object-curly-spacing": 2,
+    "one-var-declaration-per-line": 2, // 一个var定义多个变量时每个变量必须换行
+    "one-var": [1, { // 每个var/let/const 只定义一个变量
+      "var": "never",
+      "let": "never",
+      "const": "never"
+    }],
+    "padded-blocks": [2, "never"], // 其中一条:{}内第一行与最后一行不允许有空行
+    "quote-props": [2, "consistent"],
+    "quotes": [2, "single", {"allowTemplateLiterals": true}],
+    // 文档相关暂时不做限制
+    // "require-jsdoc": [2, {
+    //   "require": {
+    //     "FunctionDeclaration": true,
+    //     "MethodDefinition": true,
+    //     "ClassDeclaration": true
+    //   }
+    // }],
+    "semi-spacing": 2, // 分号前不加空格
+    "semi": 2, // 该有分号的地方都加分号
+    // "sort-keys": 1,
+    "sort-vars": 1,
+    "space-before-blocks": 2, // {} 前必须有空格，例如 function() {}
+    "space-before-function-paren": [2, "never"], // function 参数前不允许有空格
+    "spaced-comment": [2, "always"], // //后需要增加空格
+    "arrow-parens": [2, "always"],
+    "constructor-super": 2,
+    "generator-star-spacing": [2, "after"],
+    "no-new-symbol": 2,
+    "no-this-before-super": 2,
+    "no-var": 0,
+    "prefer-rest-params": 1,
+    "prefer-spread": 2,
+    "rest-spread-spacing": 2,
+    "yield-star-spacing": [2, "after"],
+    "no-debugger": "error",
+    "no-sequences": "error",
+    "no-dupe-args": "error",
+    "no-inner-declarations": "error",
+    "no-unreachable": "error",
+    "no-octal": "error",
+    "no-dupe-keys": "error",
+    "block-scoped-var": 2, // if,for内无var定义,可以用let
+    "indent": [2, 4, {
+      "SwitchCase": 1
+    }],
+    "max-nested-callbacks": [2, 5],
+    "no-empty": 0,
+    "no-loop-func": 0,
+    "no-undef": 0,
+    "no-use-before-define": 0,
+    "react/jsx-uses-vars": "error"
+  }
+}

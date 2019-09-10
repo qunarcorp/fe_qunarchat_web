@@ -1,0 +1,9 @@
+.qt-meeting-detail{
+	margin-top: 50px;
+}
+.qt-meeting-detail .meeting-img img{
+	border: 0px;
+}
+.qt-meeting-detail .meeting-content{
+	line-height: 20px;
+}

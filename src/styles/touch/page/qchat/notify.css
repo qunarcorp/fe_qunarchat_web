@@ -1,0 +1,30 @@
+/**
+ * @Author: root
+ * @Date:   2018-04-09T17:37:12+08:00
+ * @Filename: nofity.css
+ * @Last modified by:   root
+ * @Last modified time: 2018-04-09T17:37:13+08:00
+ */
+
+
+.notify {
+    position: relative;
+    padding: 15px 10px 10px;
+    background-color: #fff;
+}
+.notify .close {
+    position: absolute;
+    top:  0;
+    right: 0;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+}
+.notify .request {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    color: #26b8f2;
+    border-top: 1px solid #eee;
+    text-align: center;
+}

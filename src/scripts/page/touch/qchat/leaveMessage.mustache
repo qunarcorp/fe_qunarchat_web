@@ -1,0 +1,63 @@
+{{#data}}
+<div id="leave_msg" class="{{#isDisabled}}disabled{{/isDisabled}}">
+	<div  class="m-msg">
+		<h4 class="m-msg-title">
+			<div class="m-msg-wenzi">联系方式</div>
+			<a href="javascript:void(0)"class="m-msg-close" id="m-msg-close"></a>
+		</h4>
+		<p>
+			<label>
+				<span class="m-msg-icon">
+					<span class="small-icon m-msg-username"></span>
+				</span>
+				<input type="text" class="m-msg-input" id="userName" maxlength="20" placeholder="请输入您的姓名" autocomplete="off"  value="{{name}}"/>
+			</label>
+		</p>
+		<p>
+			<label>
+				<span class="m-msg-icon"><span class="small-icon  m-msg-tel"></span></span>
+				<input type="text" data-info="手机号" class="m-msg-input" maxlength="11" id="mobile" placeholder="请输入您的手机号" autocomplete="off" value="{{mobile}}"/>
+				<span class="err-info err-mobile hide">
+				</span>
+			</label>
+		</p>
+		<p class="{{#hasMobile}}hide{{/hasMobile}} m-msg-setcode" id="setCode">
+			<label>
+			<input type="text" class="m-msg-code" data-info="验证码" id="code" placeholder="请输入短信验证码" maxlength="6" autocomplete="off"/>
+			<span class="err-info err-code hide"></span>
+			<a href="javascript:void(0)" class="js-code m-getCode">发送验证码</a> 
+			<i class="js_hasCode hide"><span class="js_second">60</span>秒后重发</i>
+			</label>
+		</p>
+		<p class="m-msg-prompt"><label>手机号会以加密的方式发给商家，以确保您的信息安全。</label></p>
+		{{#from}}
+		<p class="m-msg-textarea">
+			<label>
+				<textarea id="message" placeholder="请描述您想咨询的问题，商家看到后会第一时间联系您！" autocomplete="off"></textarea>
+			</label>
+		</p>
+		{{/from}}
+
+		<span class="msg-btn">
+			<a href="javascript:;" id="sendMessage" class="m-submit">
+				{{#isDisabled}}暂不支持{{/isDisabled}}
+				{{^isDisabled}}确认发送{{/isDisabled}}
+			</a>
+		</span>
+	</div>
+	<div class="m-success hide">
+		<div class="m-content">
+			<div class="m-big-msg"><span class="small-icon success-icon"></span>发送成功</div>
+			<div class="m-msg-desc">请保持手机畅通，商家会在24小时内通过400电话与您联系</div>
+		</div>
+		
+	</div>
+	<div class="m-fail hide">
+		<div class="m-content">
+			<div class="m-big-msg"><span class="small-icon fail-icon"></span><span class="js-error">发送失败<span></div>
+			<div class="m-msg-desc">网络原因，请您重新提交</div>
+		</div>
+	</div>
+	<section class="m_mask"></section>
+</div>
+{{/data}}

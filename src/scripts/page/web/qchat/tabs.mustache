@@ -1,0 +1,12 @@
+<div class="qt-product-tab">
+    <span class="{{left}}" id="tab-left"></span>
+    {{#tabs}}
+        {{#active}}
+            <span class="active product-number" data-num="{{number}}">{{num}}</span>
+        {{/active}}
+        {{^active}}
+            <span class="product-number"data-num="{{number}}">{{num}}</span>
+        {{/active}}
+    {{/tabs}}
+    <span class="{{right}}" id="tab-right"></span>
+</div>

@@ -1,0 +1,36 @@
+{{#sender}}
+<div id="{{id}}" class="talk_me clr">
+    <img class="ask_sub" src="{{imageUrl}}"/>
+    <span class="me_time">我 {{time}}</span>
+    <div class="ask_talk"> <i></i>
+        <p>{{message}}</p>
+        {{#id}}
+            {{#isRead}}
+                <span class="state read">已读</span>
+            {{/isRead}}
+            {{^isRead}}
+                <span class="state">未读</span>
+            {{/isRead}}
+        {{/id}}
+    </div>
+</div>
+{{/sender}}
+{{^sender}}
+<div class="talk_ddr clr">
+    {{#isSysMsg}}
+        <div class="msg_sys">
+            <p>{{message}}</p>
+        </div>
+    {{/isSysMsg}}
+
+    {{^isSysMsg}}
+        <img class="answer-sub" src="{{imageUrl}}" />
+        <span class="ddr_time">{{webName}} {{time}}</span>
+        <div class="answer_talk"> <i></i>
+            <p>{{message}}</p>
+        </div>
+    {{/isSysMsg}}
+
+    {{extendInfo}}
+</div>
+{{/sender}}

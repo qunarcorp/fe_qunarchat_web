@@ -1,0 +1,31 @@
+/**
+ * @Author: root
+ * @Date:   2018-04-09T17:16:04+08:00
+ * @Filename: notify.css
+ * @Last modified by:   root
+ * @Last modified time: 2018-04-09T17:16:06+08:00
+ */
+
+
+.notify {
+    position: relative;
+    padding: 15px;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 5px;
+}
+.notify .close {
+    position: absolute;
+    top:  5px;
+    right: 15px;
+    font-size: 20px;
+    color: #999;
+    cursor: pointer;
+}
+.notify .request {
+    display: block;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+    cursor: pointer;
+}

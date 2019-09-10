@@ -1,0 +1,29 @@
+{{^sender}}
+    <li class="msg" data-user="{{strid}}">
+        <!--<span class="time">{{time}}</span>-->
+        <!--<img  src="{{imageUrl}}">-->
+        <span class="u-pic user-img" data-userImg={{strid}} style="background: url('{{imageUrl}}') #D8D8D8  no-repeat center center; -webkit-background-size: .5rem .5rem; background-size: .5rem .5rem;"></span>
+        <div class="txt-name" data-userName="{{strid}}">{{fullname}}</div>
+        <div class="txt">
+            <P></P>
+        </div>
+    </li>
+{{/sender}}
+<!-- Right -->
+{{#sender}}
+    <li class="msg msg-u" data-user="{{strid}}">
+        <!--<span class="utime">{{time}}</span>-->
+        <span class="u-pic1" data-userImg={{strid}} style="background: url('{{imageUrl}}') #D8D8D8 no-repeat center center; -webkit-background-size: .5rem .5rem; background-size: .5rem .5rem;"></span>
+        <div class="txt-name-right" data-userName="{{strid}}">{{fullname}}</div>
+        {{^imgMessage}}
+            <div class="txt-right">
+                <P></P>
+            </div>
+        {{/imgMessage}}
+        {{#imgMessage}}
+            <div class="txt-img">
+                <P></P>
+            </div>
+        {{/imgMessage}}
+    </li>
+{{/sender}}

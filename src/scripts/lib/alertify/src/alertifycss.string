@@ -1,0 +1,63 @@
+@charset "UTF-8";
+/* 弹窗样式 by yanhaoliang */
+.v_pop {height: 100%;  top: 0; width:100%; position:fixed; overflow-y: auto; z-index: 1002;}
+.v_mask {background:rgba(0,0,0,0.5); height: 100%;  top: 0; width:100%; left: 0; position:fixed; overflow-y: auto; z-index:1001;}
+.fh_pop {height: 100%;  top: 0; width:100%; position:fixed;}
+.fh_flex {
+/* ie10 */
+display: -ms-flexbox;
+-ms-flex-align:center;
+/* android */
+display: -webkit-box;
+-webkit-box-orient: horizontal;
+-webkit-box-pack: center;
+-webkit-box-align: center;
+display: box;
+box-orient: horizontal;
+box-pack: center;
+box-align: center;
+/* chrome、 iOS */
+display: -webkit-flex;
+display: flex;
+-webkit-align-items: center;
+align-items: center;
+-webkit-justify-content: center;
+justify-content: center;
+}
+.fh_flex_top {
+align-items: flex-start;
+-webkit-align-items: flex-start;
+} /* 内容超过一屏时添加 */
+.b_fh_wrap {width: 100%; max-height: 100%;}
+.b_fh_pop{ border-radius:5px; background: #fff; margin: 0 10px; padding:10px 15px; cursor:pointer; position: relative; z-index: 102;}
+.b_fh_pop .title{ position:relative; z-index:1;}
+.b_fh_pop .close{font:22px/26px simsun; color:#31b1c0; position:absolute; right:0; top:0; padding: 0 0 5px 5px;}
+.fh_flex_top .close { position: fixed; top: 10px; right:20px;}
+.b_fh_pop em {}
+.b_fh_pop dl{ font:13px/23px Arial, Helvetica, sans-serif; color:#333; padding:4px 0 13px;}
+.b_fh_pop ul{ font:13px/23px Arial, Helvetica, sans-serif; color:#333;}
+.b_fh_pop .status{ color:#333; font:18px/28px Arial, Helvetica, sans-serif; text-align:center; padding-bottom:8px;}
+.b_fh_pop .action{ padding:10px 33px 7px;}
+.b_fh_pop .action a{ border-radius:4px; background:#1BA9BA; font:18px/36px Arial, Helvetica, sans-serif; color:#fff; text-align:center; display:block;}
+.b_fh_pop .price{ color:#ff4500;}
+.b_fh_pop .btn{ padding:10px 0px 7px; text-align:center;}
+.b_fh_pop .btn a{ display:inline-block; font:18px/36px Arial, Helvetica, sans-serif; text-align:center; color:#fff; border-radius:4px; margin-right:15px;}
+.b_fh_pop .btn a.buy{ background:#ff4500; padding:0 30px;}
+.b_fh_pop .btn a.nobuy{ background:#1ba9ba; padding:0 20px;}
+.b_fh_pop .btn a.expand { width:100%; margin-right:0; padding: 0;}
+.b_content {margin: 2em 0;}
+/* \弹窗样式 */
+
+.rembox{border-radius:0.05rem; margin: 0 0.1rem; padding:0.1rem 0.15rem; cursor:pointer; position: relative; z-index: 102;
+}
+.rembox .cont p{font:0.14rem/0.2rem Arial, Helvetica, sans-serif}
+.rembox .close{font:0.22rem/0.26rem simsun; color:#31b1c0; position:absolute; right:0; top:0; padding: 0 0 0.05rem 0.05rem;}
+.rembox.b_fh_pop dl {font:0.13rem/0.23rem Arial, Helvetica, sans-serif; color:#333; padding:0.04rem 0 0.13rem;}
+.rembox.b_fh_pop ul {font:0.13rem/0.23rem Arial, Helvetica, sans-serif; color:#333;}
+.rembox.b_fh_pop .status{ color:#333; font:0.18rem/0.28rem Arial, Helvetica, sans-serif; text-align:center; padding-bottom:0.08rem;}
+.rembox .action{ padding:0.1rem 0.33rem 0.07rem;}
+.rembox .action a{ border-radius:0.04rem; background:#1BA9BA; font:0.18rem/0.36rem Arial, Helvetica, sans-serif; color:#fff; text-align:center; display:block;}
+.rembox .btn{padding:0.1rem 0 0.07rem; text-align:center;}
+.rembox .btn a{display:inline-block; font:0.18rem/0.36rem Arial, Helvetica, sans-serif; text-align:center; color:#fff; border-radius:0.04rem; margin-right:0.15rem;}
+.rembox .btn a.buy{ background:#ff4500; padding:0 0.3rem;}
+.rembox .btn a.nobuy{ background:#1ba9ba; padding:0 0.2rem;}
