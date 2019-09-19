@@ -118,7 +118,7 @@ var upload = {
 
                         // 校验上传的文件是否存在
                         // 如果文件存在了就不上传了，直接显示为和上传成功的效果
-                        var checkFileUrl = self.domain + 'file/v2/inspection/img?' + paramLink;
+                        var checkFileUrl = self.domain + '/file/v2/inspection/img?' + paramLink;
 
                         self.checkUpLoadFileExist(checkFileUrl, function(resp) {
                             uploadCBData.message = file.name;

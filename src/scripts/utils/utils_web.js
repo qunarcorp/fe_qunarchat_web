@@ -85,7 +85,7 @@
                         case 'image':
                             var httpUrl = val;
                             if (httpUrl.indexOf('http') === -1) {
-                                httpUrl = window.nav_igator.baseaddess.fileurl + httpUrl;
+                                httpUrl = window.nav_igator.baseaddess.fileurl + '/' + httpUrl;
                             }
 
                             ret = '<img src="' + httpUrl + '"/>'

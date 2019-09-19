@@ -415,10 +415,10 @@ BrowseHistory.prototype = {
         if(img){
             if(protocal.indexOf('https:') >= 0){
                 img = img.replace(/^(http|https):/, '');
-                img = img.replace(/^\/\/[^/]+/, window.nav_igator.baseaddess.fileurl);
+                img = img.replace(/^\/\/[^/]+/, window.nav_igator.baseaddess.fileurl + '/');
             }else if(protocal.indexOf('http:') >= 0){
                 img = img.replace(/^(http|https):/, '');
-                img = img.replace(/^\/\/[^/]+/, window.nav_igator.baseaddess.fileurl);
+                img = img.replace(/^\/\/[^/]+/, window.nav_igator.baseaddess.fileurl + '/');
             }
             return img;
         }else{

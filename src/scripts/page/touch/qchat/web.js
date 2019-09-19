@@ -150,10 +150,10 @@
             // 应刘帆要求，处理和XMPP关键字冲突的符号 -- baotongw
             strid = strid.replace('@', '[at]');
 
-            if (!strid) {
-                alert('您未指定当前聊天对象');
-                return
-            }
+            // if (!strid) {
+            //     alert('您未指定当前聊天对象');
+            //     return
+            // }
 
             this.strid = strid;
             this.seatId = seatId;
@@ -670,7 +670,9 @@
             QNR.qevent.on('addImg', function(imgUrl, obj) {
                 var slider = [],
                     index = self.swiperIndex = self.swiperIndex + 1;
-
+                if (JSON.stringify(imgUrl).search('http') === -1) {
+                    imgUrl = DOWN_URL + '/' + imgUrl;
+                }
                 obj.parentNode.className = 'txt-img';
                 obj.innerHTML = '';
                 $(obj).parent().css({
@@ -1101,17 +1103,17 @@
                     isSysMsg = false,
                     isMe = msg_dict.sender == 'me';
 
-                // 屏蔽其他人消息
-                if (!isMe) {
-                    if (+msg_type === 1 &&
-                        ((msg_dict.topType === 'chat' && msg_dict.from !== currentStrid) ||
-                        (msg_dict.topType === 'consult' && msg_dict.realFrom !== currentStrid))) {
-                        if (!msg_dict.history) {
-                            unreadTip.show();
-                            return;
-                        }
-                    }
-                }
+                // // 屏蔽其他人消息
+                // if (!isMe) {
+                //     if (+msg_type === 1 &&
+                //         ((msg_dict.topType === 'chat' && msg_dict.from !== currentStrid) ||
+                //         (msg_dict.topType === 'consult' && msg_dict.realFrom !== currentStrid))) {
+                //         if (!msg_dict.history) {
+                //             unreadTip.show();
+                //             return;
+                //         }
+                //     }
+                // }
 
                 if (msg_type && msg_type == "10" && msg_dict.sender === 'me') {
                     text = "您发送了一个窗口抖动";

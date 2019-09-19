@@ -9,7 +9,7 @@
 require('lib/extension/string.js');
 var enums = require('../enums.js');
 var utils = require('utils/utils.js');
-var domain = window.nav_igator.baseaddess.fileurl;
+var domain = window.nav_igator.baseaddess.fileurl + '/';
 
 var messageHelper = {
     setOptions: function(emotions) {
@@ -87,7 +87,7 @@ var messageHelper = {
                 switch (type) {
                     case 'image':
                         if(val.indexOf('http') === -1) {
-                            val = window.nav_igator.baseaddess.fileurl + val;
+                            val = window.nav_igator.baseaddess.fileurl + '/' + val;
                         }
 
                         ret = '[image|' + (val.indexOf('cgi-bin') > -1 ? (domain + val) : val) + ']';

@@ -453,7 +453,7 @@ var LeftBar = {
 
 	// 更新用户头像、显示名称
 	updateUserInfo: function(strids) {
-		// debugger
+		//debugger
 
 		var self = this;
 		var args = [];
@@ -474,9 +474,19 @@ var LeftBar = {
 
 		//每次请求10个用户数据
 		for (var i = 0, len = params.length; i < len; i++) {
-
-			args = params[i];
-
+			function getUrlParam(name) {
+				var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+				var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+				if (r != null) return unescape(r[2]); return null; //返回参数值
+			}
+			// args = params[i];
+			var args = [{
+				domain: this.setting.toDomain,
+				users: [{
+					user: getUrlParam('shopId'),
+					version: '0'
+				}]
+			}];
 			//统一使用一个接口
 			$.ajax({
 				url: requestURL,
@@ -517,7 +527,7 @@ var LeftBar = {
 							}
 
 							username = user.username || '';
-							webname =  user.webname || user.nickname || username || '';
+							webname =  user.webname || user.nickname || username || '客服';
 							imageurl = user.imageurl || '';
 
 							// 缓存webname
@@ -610,7 +620,7 @@ var LeftBar = {
 	 * 获取店铺基本信息
 	 */
 	getShopBaseInfo: function(shopId, callback) {
-
+		//debugger
 		//校验缓存店铺信息
 		if (cacheShopBaseInfo[shopId]) {
 			callback && callback(cacheShopBaseInfo[shopId]);
