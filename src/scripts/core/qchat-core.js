@@ -1415,6 +1415,10 @@
                             // 服务器给出key，chat ready
                             // 后续收发消息都依赖这个key
                             if (key) {
+                                var uid = converse.myId,
+                                t = new Date().getTime() + '',
+                                q_ckey = Base64.encode('u=' + uid + '&k=' + MD5.hexdigest(key + t).toUpperCase() + '&t=' + t);
+                                document.cookie = 'q_ckey=' + q_ckey + '; path=/;'
                                 converse.key = key;
                                 converse.chatDeffered.resolve();
                                 converse.onChatReady && converse.onChatReady(converse.myId, converse.key);

@@ -317,10 +317,6 @@
             captcha.refresh();
         },
         onChatReady: function(myId, key) {
-            var uid = myId,
-                t = new Date().getTime() + '',
-                q_ckey = Base64.encode('u=' + uid + '&k=' + MD5.hexdigest(key + t).toUpperCase() + '&t=' + t);
-            document.cookie = 'q_ckey=' + q_ckey + '; path=/;'
             
             this.getHistory(20);
             var dmsg = this.getQueryString('dmsg');
