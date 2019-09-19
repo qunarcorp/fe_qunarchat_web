@@ -865,12 +865,6 @@ $(document).ready(function() {
         onChatReady: function(myId, key) {
             var self = this;
 
-            var uid = myId,
-                t = new Date().getTime() + '',
-                q_ckey = Base64.encode('u=' + uid + '&k=' + MD5.hexdigest(key + t).toUpperCase() + '&t=' + t);
-            document.cookie = 'q_ckey=' + q_ckey + '; path=/;'
-            //document.cookie = 'q_ckey=' + q_ckey + '; domain=com; path=/;'
-            //如果是酒店业务过来 弹出后需发一个消息
             //加到这里的原因是初始化需要调用他们的方法
             var source = this.getQueryString('source') || '';
             if(source == "hotel") {
