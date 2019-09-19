@@ -1104,7 +1104,12 @@
                 }
 
                 converse.chatDeffered.done($.proxy(function () {
-                    contact.cardDeffered = this.getCard(strid);
+                    function getUrlParam(name) {
+                        var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                        var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+                        if (r != null) return unescape(r[2]); return null; //返回参数值
+                    }
+                    contact.cardDeffered = this.getCard(getUrlParam('shopId'));
                 }, this));
 
                 return false;
@@ -2251,15 +2256,16 @@
             },
 
             sendMessageStanza: function (text, msgType, isHiddenMsg) {
+                //debugger
                 /* Sends the actual XML stanza to the XMPP server.
                  */
                 // TODO: Look in ChatPartners to see what resources we have for the recipient.
                 // if we have one resource, we sent to only that resources, if we have multiple
                 // we send to the bare jid.
-                if (!converse.strid) {
-                    converse.log('No contact specified');
-                    return
-                }
+                // if (!converse.strid) {
+                //     converse.log('No contact specified');
+                //     return
+                // }
 
                 var self = this;
                 var timestamp = (new Date()).getTime();
@@ -2281,10 +2287,21 @@
                     return false;
                 }
 
+                function getUrlParam(name) {
+                    var reg = new RegExp("(^|&)" + name + "=([^&]*)(&|$)"); //构造一个含有目标参数的正则表达式对象
+                    var r = window.location.search.substr(1).match(reg);  //匹配目标参数
+                    if (r != null) return unescape(r[2]); return null; //返回参数值
+                }
                 chatInfo.type = 'chat';
                 chatInfo.isHiddenMsg = isHiddenMsg ? '1' : '0';
-
-                if (chatInfo.realfrom && chatInfo.realto) {
+                if (chatInfo.to == null)  {
+                    chatInfo.to = getUrlParam('shopId') + '@' + converse.domain;
+                } else {
+                    chatInfo.to = getUrlParam('shopId') + chatInfo.to;
+                }               
+                chatInfo.realfrom = chatInfo.from;
+                
+                if (true) {
                     chatInfo.type = 'consult';
                     chatInfo.channelid = converse.chatInfoChannelid;
                     chatInfo.qchatid = converse.chatInfoChatid;

@@ -59,7 +59,7 @@ $(document).ready(function() {
     var LM_REGEXP = /(微信|QQ|手机号|(\+*86|0)?1[358]{9})/ig; // 关键词过滤规则
     var LEAVE_MESSAGE_01 = '<div class="talk_me clr"><div class="prompt clr">客服当前忙碌，您可以<a id="js_lm" class="js_lm">发送联系方式</a>给商家，商家看到后会第一时间联系您！</div></div>';
     var LEAVE_MESSAGE_02 = '<div class="talk_me clr"><div class="prompt clr">如需客服电话联系您，可以<a id="js_lm" class="js_lm">发送联系方式</a>给客服，客服看到后会第一时间联系您哦！</div></div>';
-    var DOWN_URL = window.nav_igator.baseaddess.fileurl;
+    var DOWN_URL = window.nav_igator.baseaddess.fileurl + '/';
     var XMPP_URL = window.nav_igator.baseaddess.xmpp;
     //var bosh_service_url = "http://" + XMPP_URL + '/http-bind/';
     var bosh_service_url = '/http-bind/';
@@ -70,7 +70,8 @@ $(document).ready(function() {
         // rightbar的detail展示数据
         detailUrl: '/qcadmin/api/pdt/productDtl.qunar',
         // 最近咨询
-        recentProUrl: '/qcadmin/api/pdt/lastOne.json',
+        // recentProUrl: '/qcadmin/api/pdt/lastOne.json',
+        recentProUrl: '',
         // 暂无提供接口,更新客服开始最近一个会话的时间
         chatReadyConfirm: ''
     };
@@ -974,6 +975,8 @@ $(document).ready(function() {
         onCard: function(data, isMe, shopName) {
             //因为头像是ajax获取，如果是历史消息的话有可能不存在
             var headImageURL = defaultHeadImage; //默认头图
+            //debugger
+            // console.log(data)
             if(data && data.imageurl) {
                 headImageURL = data.imageurl;
             }
@@ -1239,7 +1242,7 @@ $(document).ready(function() {
         
         // skipAutoRender: 这里处理的是默认发送的消息，发送完了不在当前qchat展示，类似sendServiceMsg
         getInputAndSend: function(text, isHiddenMsg) {
-            // debugger
+            //debugger
             if(this.msgLock) {
                 return
             }
@@ -1257,7 +1260,7 @@ $(document).ready(function() {
                 }
                 message = utils.replaceUrl(message); //转换为自定义的 url格式
                 var id = this.converse.sendMessage(message, null, isHiddenMsg);
-                if(id) {
+                
                     if(isHiddenMsg !== true) {
                         this.showMessage({
                             fullname: this.converse.settings.get("myName"),
@@ -1270,10 +1273,7 @@ $(document).ready(function() {
                         
                         this.$msgInput.html('').focus();
                     }
-                } else {
-                    alert('消息发送失败');
-                    return;
-                }
+               
                 
                 // if(this.enableLeaveMesage) {
                 //     this.leaveMessage();
@@ -1529,7 +1529,7 @@ $(document).ready(function() {
         prefixOrderData: function(data) {
             var dataObj = {};
             dataObj.detailUrl = data.product_url;
-            dataObj.pic = window.nav_igator.baseaddess.fileurl + data.main_pic;
+            dataObj.pic = window.nav_igator.baseaddess.fileurl + '/' + data.main_pic;
             dataObj.title = data.title;
             dataObj.displayId = data.display_id;
             dataObj.price = data.payPrice ? data.payPrice : 0;
