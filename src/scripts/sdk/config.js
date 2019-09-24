@@ -4,7 +4,7 @@ var domain = window.nav_igator.baseaddess.xmpp;
 var settings = {
     server: {
         bosh_service_url: domain + 'http-bind/',
-        webSocket_boah_service_url: 'ws:' + domain + 'websocket',
+        webSocket_boah_service_url: 'ws:' + domain + ':5280/websocket',
         http_api_server: domain + 'api/'
     },
     // 设备类型
